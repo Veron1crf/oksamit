@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oksamit - Натуральные ткани</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Oksamit</div>
+            <div class="nav-links">
+                <a href="#home">Главная</a>
+                <a href="#about">О бренде</a>
+                <a href="#catalog">Каталог</a>
+                <a href="#cart" class="cart-link">Корзина <span class="cart-count">0</span></a>
+                <a href="#" class="profile-icon" onclick="toggleAuthModal()">👤</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Модальное окно авторизации -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleAuthModal()">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchAuthTab('login')">Вход</button>
+                <button class="auth-tab" onclick="switchAuthTab('register')">Регистрация</button>
+            </div>
+            <div id="login-form" class="auth-form">
+                <h2>Вход</h2>
+                <input type="tel" id="login-phone" placeholder="Номер телефона" required>
+                <button onclick="login()">Войти</button>
+            </div>
+            <div id="register-form" class="auth-form" style="display: none;">
+                <h2>Регистрация</h2>
+                <input type="text" id="register-name" placeholder="Ваше имя" required>
+                <input type="tel" id="register-phone" placeholder="Номер телефона" required>
+                <button onclick="register()">Зарегистрироваться</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero">
+            <h1>Oksamit</h1>
+            <p>Натуральные ткани для вашего комфорта</p>
+        </section>
+
+        <section id="about" class="about">
+            <h2>О бренде</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Oksamit — это бренд одежды, созданный с любовью к природе и заботой о вашем комфорте. Мы используем только натуральные ткани высшего качества, которые дарят неповторимые тактильные ощущения и обеспечивают идеальный микроклимат для вашей кожи.</p>
+                    <h3>Преимущества натуральных тканей:</h3>
+                    <ul>
+                        <li>Гипоаллергенность и безопасность</li>
+                        <li>Отличная воздухопроницаемость</li>
+                        <li>Естественная терморегуляция</li>
+                        <li>Долговечность и износостойкость</li>
+                        <li>Экологичность и биоразлагаемость</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="catalog">
+            <h2>Каталог</h2>
+            <div class="products-grid">
+                <!-- Products will be added dynamically via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Корзина</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p>Итого: <span id="total-price">0</span> ₽</p>
+                <button id="checkout-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="image-modal" class="modal">
+        <div class="modal-content image-modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <div id="modal-description"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Oksamit</h3>
+                <p>Натуральные ткани для вашего комфорта</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>Email: info@oksamit.ru</p>
+                <p>Телефон: +7 (999) 123-45-67</p>
+                <div class="social-links">
+                    <a href="https://vk.com/so1tana" target="_blank" class="social-icon">
+                        <img src="images/vk-icon.svg" alt="VK" class="social-icon-img">
+                    </a>
+                    <a href="https://www.instagram.com/so1tana" target="_blank" class="social-icon">
+                        <img src="images/instagram-icon.svg" alt="Instagram" class="social-icon-img">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Подписка на новости</h3>
+                <p>Будьте в курсе новинок и акций</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Ваш email" required>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacy" required>
+                        <label for="privacy">
+                            Я принимаю <a href="privacy-policy.html" target="_blank">пользовательское соглашение</a> о конфиденциальности
+                        </label>
+                    </div>
+                    <button type="submit" class="subscribe-btn">Подписаться</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Oksamit. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

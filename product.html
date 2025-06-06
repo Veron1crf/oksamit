@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oksamit - Натуральные ткани</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Oksamit</div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="index.html#about">О бренде</a>
+                <a href="index.html#catalog">Каталог</a>
+                <a href="#cart" class="cart-link">Корзина <span class="cart-count">0</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-details">
+            <div class="product-gallery">
+                <img id="main-image" src="" alt="" class="main-product-image">
+                <div class="thumbnail-container">
+                    <!-- Thumbnails will be added dynamically -->
+                </div>
+            </div>
+            <div class="product-info-detailed">
+                <h1 id="product-name"></h1>
+                <p class="product-price" id="product-price"></p>
+                <div class="product-description-detailed">
+                    <h3>Описание</h3>
+                    <p id="product-description"></p>
+                </div>
+                <div class="product-specifications">
+                    <h3>Характеристики</h3>
+                    <ul id="product-specs">
+                        <!-- Спецификации будут добавлены через JavaScript -->
+                    </ul>
+                </div>
+                <button class="buy-button" id="buy-button">Купить</button>
+            </div>
+        </section>
+
+        <section class="similar-products">
+            <div class="similar-products-grid" id="similar-products">
+                <!-- Похожие товары будут добавлены через JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Корзина</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p>Итого: <span id="total-price">0</span> ₽</p>
+                <button id="checkout-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Oksamit</h3>
+                <p>Натуральные ткани для вашего комфорта</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>Email: info@oksamit.ru</p>
+                <p>Телефон: +7 (999) 123-45-67</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Oksamit. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="product.js"></script>
+</body>
+</html> 
